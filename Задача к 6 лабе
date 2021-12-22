@@ -1,0 +1,35 @@
+public class Lab6{
+	public static void main(String[] args ) {
+		int[][] hoursJob = new  int[8][7]; //8 работников и 7 дней
+		int[] allHours = new int[8];
+		
+		System.out.println("-----Часы работы-----");
+		for (int i = 0; i < 8; i++ ) {
+			for (int j = 0; j < 7; j++ ) {
+				
+				hoursJob[i][j] =(int) (Math.random() * 10); // не больше 10 часов в день
+				System.out.print(" " + hoursJob[i][j] + " ");
+				
+				allHours[i] +=  hoursJob[i][j];
+				
+			}
+			System.out.println();
+		}
+		
+		int hours;
+		System.out.println("-----Сумма часов-----");
+		for (int i = 0; i < 8; i++ ) {
+			for (int j = 0; j < 7; j++) {
+				if(allHours[j] < allHours[j + 1]) { 
+					hours = allHours[j + 1];
+					allHours[j + 1] = allHours[j];
+					allHours[j] = hours;		
+				}
+			}		
+		}	
+		
+		for(int i = 0; i < 8; i++) {
+			System.out.println((i + 1) + " работника сумма часов равна: " + allHours[i]);
+		}
+	}
+}
