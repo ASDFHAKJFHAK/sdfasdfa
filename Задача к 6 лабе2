@@ -1,6 +1,6 @@
 public class Lab6{
 	public static void main(String[] args ) {
-		final int daysWeek = 7;
+		final int DAYS_WEEK = 7;
 		int employes = 8;
 		int[][] hoursJob = new  int[employes][daysWeek]; //8 работников и 7 дней
 		int[] allHours = new int[8];
