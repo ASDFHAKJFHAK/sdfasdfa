@@ -1,9 +1,9 @@
 public class Lab6{
 	public static void main(String[] args ) {
-		final int DAYS_WEEK = 7;
-		final int EMPLOYES = 8;
+		final int DAYS_WEEK = 7; //Рабочие дни
+		final int EMPLOYES = 8; //Количество сотрудников
 		int[][] hoursJob = new  int[EMPLOYES][DAYS_WEEK]; //8 работников и 7 дней
-		int[] allHours = new int[8];
+		int[] allHours = new int[EMPLOYES];
 		
 		System.out.println("-----Часы работы-----");
 		for (int i = 0; i < EMPLOYES; i++ ) { //идет начисление часов каждому сотруднику
