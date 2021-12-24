@@ -1,0 +1,34 @@
+public class Lab6{
+	public static void main(String[] args ) {
+		final int DAYS_WEEK = 7;
+		final int EMPLOYES = 8;
+		int[][] hoursJob = new  int[EMPLOYES][DAYS_WEEK]; //8 работников и 7 дней
+		int[] allHours = new int[8];
+		
+		System.out.println("-----Часы работы-----");
+		for (int i = 0; i < EMPLOYES; i++ ) { //идет начисление часов каждому сотруднику
+			for (int j = 0; j < DAYS_WEEK; j++ ) {		
+				hoursJob[i][j] =(int) (Math.random() * 10); // не больше 10 часов в день
+				System.out.print(" " + hoursJob[i][j] + " ");		
+				allHours[i] +=  hoursJob[i][j];		//суммирауются часы за неделю, и присваиваются каждому сотруднику		
+			}
+			System.out.println();
+		}
+		
+		int hours;
+		System.out.println("-----Сумма часов-----");
+		for (int i = 0; i < EMPLOYES; i++ ) { //сортировка общих чаксов сотрудников, по убыванию  
+			for (int j = 0; j <  DAYS_WEEK; j++) { 
+				if(allHours[j] < allHours[j + 1]) { 
+					hours = allHours[j + 1];
+					allHours[j + 1] = allHours[j];
+					allHours[j] = hours;		
+				}
+			}		
+		}	
+		
+		for(int i = 0; i < EMPLOYES; i++) { //вывод сотрудника и его сумма часов, по убыванию
+			System.out.println((i + 1) + " работника сумма часов равна: " + allHours[i]);
+		}
+	}
+}
